@@ -1,0 +1,16 @@
+$spacer-x:                         $grid-gutter-width-base;
+$spacer-y:                         decimal-round($font-size-root * $line-height-base);
+
+$spacer-x-xs:                      $spacer-x * 0.25 !default;
+$spacer-x-sm:                      $spacer-x * 0.5 !default;
+$spacer-x:                         $spacer-x !default;
+$spacer-x-md:                      $spacer-x * 1.5 !default;
+$spacer-x-lg:                      $spacer-x * 2 !default;
+$spacer-x-xl:                      $spacer-x * 3 !default;
+
+$spacer-y-xs:                      $spacer-y * 0.25 !default;
+$spacer-y-sm:                      $spacer-y * 0.5 !default;
+$spacer-y:                         $spacer-y !default;
+$spacer-y-md:                      $spacer-y * 1.5 !default;
+$spacer-y-lg:                      $spacer-y * 2!default;
+$spacer-y-xl:                      $spacer-y * 3 !default;

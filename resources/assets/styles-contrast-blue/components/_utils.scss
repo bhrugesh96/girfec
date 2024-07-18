@@ -1,0 +1,107 @@
+.rlpm {
+  @include remove-last-p-margin;
+}
+
+.bg-cover {
+  @include bg-cover;
+}
+
+.bg-primary {
+  background-color: $brand-primary;
+}
+
+.bg-success {
+  background-color: $brand-success;
+}
+
+.bg-info {
+  background-color: $brand-info;
+}
+
+.bg-warning {
+  background-color: $brand-warning;
+}
+
+.bg-danger {
+  background-color: $brand-danger;
+}
+
+.bg-secondary {
+  background-color: $brand-secondary;
+}
+
+.bg-teal {
+  background-color: $teal;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
+
+.bg-pink {
+  background-color: $pink;
+}
+
+.bg-purple {
+  background-color: $purple;
+}
+
+.bg-green-light {
+  background-color: $green-light;
+}
+
+.bg-gray-darkest {
+  background-color: $gray-darkest;
+}
+
+.bg-gray-darker {
+  background-color: $gray-darker;
+}
+
+.bg-gray-dark {
+  background-color: $gray-dark;
+}
+
+.bg-gray {
+  background-color: $gray;
+}
+
+.bg-gray-light {
+  background-color: $gray-light;
+}
+
+.bg-gray-lighter {
+  background-color: $gray-lighter;
+}
+
+.bg-gray-lightest {
+  background-color: $gray-lighter;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.img-cover-active {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translateXY(-50%, -50%);
+  }
+}
+
+@each $bp in map-keys($grid-breakpoints) {
+  .hidden-#{$bp} {
+    @include responsive-properties((
+        (display, (v-#{$bp}: none !important)),
+    ));
+  }
+}

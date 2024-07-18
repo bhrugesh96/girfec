@@ -1,0 +1,46 @@
+.content-layout-item.benefits {
+  margin-bottom: $spacer-y-sm;
+
+  .benefits {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .benefit {
+      margin-bottom: $spacer-y-sm;
+      display: flex;
+      flex: 0 0 100%;
+
+      .benefit-icon {
+        flex: 0 0 auto;
+        margin-right: $spacer-x-sm;
+        color: $brand-success;
+        font-size: $font-size-h4;
+
+        .font-medium & {
+          margin-top: $spacer-y-xs / 3;
+        }
+
+        .font-large & {
+          margin-top: $spacer-y-xs / 1.5;
+        }
+      }
+
+      .benefit-text {
+        margin-top: $spacer-y-xs / 3;
+        color: $gray-darker;
+
+        h4 {
+          line-height: $headings-line-height;
+          color: $gray-dark;
+          font-size: $font-size-md-em;
+          font-weight: $font-weight-regular;
+          margin-bottom: $spacer-y-xs / 2;
+        }
+      }
+    }
+  }
+}

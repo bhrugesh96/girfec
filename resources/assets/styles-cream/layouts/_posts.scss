@@ -1,0 +1,54 @@
+.blog,
+.category,
+.post-type-archive-girfec_document,
+.single-girfec_document {
+
+  .content-wrap {
+    margin-bottom: $spacer-y-sm;
+  }
+
+  .hentry {
+    background-color: $cream-light;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    @include responsive-properties((
+        (padding, (v: $spacer-y $spacer-x, v-md-up: $spacer-y-md $spacer-x)),
+    ));
+
+    & + .hentry {
+      margin-top: $spacer-y;
+    }
+
+    .entry-header {
+
+      .entry-title {
+        margin: 0;
+        font-size: $font-size-h5;
+
+        a {
+          color: $brand-primary;
+
+          @include hover-focus() {
+            color: darken($brand-primary, 10);
+          }
+        }
+      }
+
+      .entry-meta {
+        margin: 0;
+        color: $blue;
+      }
+    }
+
+    .entry-summary {
+      color: $blue;
+      margin-top: $spacer-y-sm;
+      font-size: $font-size-sm-em;
+      @include remove-last-p-margin;
+    }
+
+    .entry-footer {
+      margin-top: $spacer-y-sm;
+    }
+  }
+}

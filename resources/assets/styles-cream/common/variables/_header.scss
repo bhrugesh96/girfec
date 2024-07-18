@@ -1,0 +1,54 @@
+$header-bg: $white !default;
+$header-zindex: 1050 !default;
+
+// Mobile
+$header-mobile-banner-height: 48px !default;
+$header-mobile-banner-border: 1px solid rgba($white, .35) !default;
+
+// Top
+$header-top-height: 48px !default;
+$header-top-bg: $white !default;
+$header-top-font-size: .8125rem !default;
+
+// Middle
+$header-middle-height: 110px !default;
+$header-middle-height-md: 120px !default;
+$header-middle-bg: $cream-lighter !default;
+
+// Bottom
+$header-bottom-height: 60px !default;
+$header-bottom-bg: $brand-primary !default;
+$header-bottom-color: $white !default;
+$header-bottom-font-weight: $font-weight-medium !default;
+$header-bottom-font-size: $font-size-sm !default;
+$header-bottom-font-size-lg: .9375rem !default;
+
+// Sidenav
+$sidenav-backdrop-bg: $cream-medium !default;
+$sidenav-backdrop-opacity: .9 !default;
+$sidenav-backdrop-zindex: 1050 !default;
+$sidenav-backdrop-translation-duration: .3s !default;
+
+$sidenav-toggle-zindex: 1052 !default;
+$sidenav-toggle-height: 30px !default;
+$sidenav-toggle-width: 30px !default;
+
+$sidenav-toggle-bar-width: 30px !default;
+$sidenav-toggle-bar-height: 2px !default;
+$sidenav-toggle-bar-margin: 3px !default;
+$sidenav-toggle-bar-bg: $white !default;
+
+$sidenav-translation-duration: .5s !default;
+$sidenav-width: 270px !default;
+$sidenav-width-sm: 355px !default;
+$sidenav-zindex: 1052 !default;
+$sidenav-bg: $brand-primary !default;
+
+$sidenav-nav-link-padding-x: 8px !default;
+$sidenav-primary-nav-link-padding-y: 4px !default;
+
+// Login Collapse
+$login-collapse-text-color: rgba($white, .75) !default;
+$login-collapse-toggle-zindex: 1054 !default;
+$login-collapse-backdrop-zindex: 1053 !default;
+$login-collapse-zindex: 1054 !default;

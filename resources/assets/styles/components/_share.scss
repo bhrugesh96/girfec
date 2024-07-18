@@ -1,0 +1,59 @@
+.share-bar {
+  background-color: $gray-darkest;
+
+  .entry-share {
+    margin-left: auto;
+  }
+
+  .btn {
+
+    @include media-breakpoint-down(sm) {
+      @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+    }
+  }
+
+  .entry-share-btns {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    @include responsive-properties((
+        (height, (v: $header-mobile-banner-height, v-md-up: $header-bottom-height)),
+    ));
+
+    li {
+      margin: 0;
+
+      & + li {
+        margin-left: $spacer-x-xs;
+      }
+
+      &:not(.entry-share-btn-email) {
+
+        a {
+          display: block;
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          padding: 0;
+          margin: 0;
+          color: $gray-darkest;
+          text-align: center;
+          background-color: $white;
+          border-radius: 15px;
+          font-size: $font-size-base;
+          @include transition($btn-transition);
+
+          @include hover-focus() {
+            opacity: .85;
+            color: $brand-primary;
+            background-color: $white;
+          }
+        }
+      }
+
+      &.entry-share-btn-email {
+        margin-left: $spacer-x-sm;
+      }
+    }
+  }
+}

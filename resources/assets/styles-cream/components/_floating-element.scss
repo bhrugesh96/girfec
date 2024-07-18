@@ -1,0 +1,95 @@
+.layout-item {
+  position: relative;
+
+  .floating-element {
+    display: none;
+  }
+
+  &.has-floating-element {
+
+    .floating-element {
+      display: block;
+    }
+
+    > .container {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+.floating-element {
+  width: 200px;
+  margin: 0;
+  position: absolute;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
+  z-index: 10;
+
+  .floating-element-inner {
+    backface-visibility: hidden;
+    margin-bottom: 0;
+
+    img {
+      backface-visibility: hidden;
+      min-width: 100%;
+    }
+  }
+
+  &.hpos-right {
+    right: $grid-gutter-width-base / 2;
+    @each $breakpoint, $container-max-width in $container-max-widths {
+      @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+        right: calc(((100vw - #{$container-max-width}) / 2) + (#{$grid-gutter-width-base / 2}));
+      }
+    }
+
+    &.offset-helper-enabled {
+
+      .floating-element-inner {
+        @include media-breakpoint-down(md) {
+          @include translateX(((map-get($container-max-widths, lg) - map-get($container-max-widths, md)) / 2));
+        }
+
+        @include media-breakpoint-down(sm) {
+          @include translateX(((map-get($container-max-widths, lg) - map-get($container-max-widths, sm)) / 2));
+        }
+      }
+    }
+  }
+
+  &.hpos-center {
+    left: 50%;
+    @include translateX(-50%);
+  }
+
+  &.hpos-left {
+    left: $grid-gutter-width-base / 2;
+    @each $breakpoint, $container-max-width in $container-max-widths {
+      @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+        left: calc(((100vw - #{$container-max-width}) / 2) + (#{$grid-gutter-width-base / 2}));
+      }
+    }
+
+    &.offset-helper-enabled {
+
+      .floating-element-inner {
+        @include media-breakpoint-down(md) {
+          @include translateX(((map-get($container-max-widths, lg) - map-get($container-max-widths, md)) / -2));
+        }
+
+        @include media-breakpoint-down(sm) {
+          @include translateX(((map-get($container-max-widths, lg) - map-get($container-max-widths, sm)) / -2));
+        }
+      }
+    }
+  }
+
+  &.vpos-top {
+    top: 0;
+  }
+
+  &.vpos-bottom {
+    bottom: 0;
+  }
+}

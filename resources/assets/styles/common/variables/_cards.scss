@@ -1,0 +1,46 @@
+$card-border-width:              0;
+$card-border-radius:             $border-radius-lg;
+$card-border-radius-inner:       $border-radius-lg;
+
+$card-header-padding-y:          15.5px;
+$card-header-padding-x:          $spacer-x-md;
+$card-header-padding:            $card-header-padding-y $card-header-padding-x;
+
+$card-block-padding-y:           $spacer-y;
+$card-block-padding-x:           $spacer-x;
+$card-block-padding:             $card-block-padding-y $card-block-padding-x;
+
+$card-default-text:              $body-color;
+$card-default-border:            $gray;
+$card-default-heading-bg:        #fff;
+
+$card-primary-text:              #fff;
+$card-primary-border:            $brand-primary;
+$card-primary-heading-bg:        $brand-primary;
+
+$card-secondary-text:            #fff !default;
+$card-secondary-border:          $brand-secondary !default;
+$card-secondary-heading-bg:      $brand-secondary !default;
+
+$card-success-text:              #fff;
+$card-success-border:            $brand-success;
+$card-success-heading-bg:        $brand-success;
+
+$card-danger-text:               #fff;
+$card-danger-border:             $brand-danger;
+$card-danger-heading-bg:         $brand-danger;
+
+$card-warning-text:              #fff;
+$card-warning-border:            $brand-warning;
+$card-warning-heading-bg:        $brand-warning;
+
+$card-info-text:                 #fff;
+$card-info-border:               $brand-info;
+$card-info-heading-bg:           $brand-info;
+
+$card-toggle-bar-width:          25px !default;
+$card-toggle-bar-height:         2px !default;
+$card-toggle-bar-padding-x:      $spacer-x !default;
+$card-toggle-bar-padding-y:      0 !default;
+$card-toggle-bar-margin:         3px !default;
+$card-toggle-bar-bg:             $brand-primary !default;

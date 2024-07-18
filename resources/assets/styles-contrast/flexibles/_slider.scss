@@ -1,0 +1,155 @@
+.layout-item.slider {
+  @include responsive-properties((
+      (height, (v: 400px, v-md-up: 600px)),
+      (min-height, (v: 400px, v-md-up: 600px)),
+  ));
+
+  .slider-body {
+    @include responsive-properties((
+        (height, (v: 400px, v-md-up: 600px)),
+        (min-height, (v: 400px, v-md-up: 600px)),
+    ));
+
+    .slider-slide {
+      position: relative;
+      @include responsive-properties((
+          (height, (v: 400px, v-md-up: 600px)),
+          (min-height, (v: 400px, v-md-up: 600px)),
+      ));
+
+      .slide-thumbnail {
+        @include responsive-properties((
+            (height, (v: 400px, v-md-up: 600px)),
+            (min-height, (v: 400px, v-md-up: 600px)),
+        ));
+      }
+
+      .slide-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($black, .78);
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .slide-title {
+          margin: 0 0 $spacer-y-xs;
+          color: $white;
+          font-weight: $font-weight-medium;
+          text-align: center;
+          @include responsive-properties((
+              (font-size, (v: $font-size-h3, v-md-up: $display4-size, v-lg-up: $display3-size, v-xl-up: $display2-size)),
+          ));
+        }
+
+        .slide-text {
+          margin-bottom: $spacer-y-md;
+          color: $white;
+          text-align: center;
+          @include remove-last-p-margin();
+          @include responsive-properties((
+              (font-size, (v: $font-size-h6, v-md-up: $font-size-h5, v-lg-up: 1.375rem, v-xl-up: $font-size-h4)),
+          ));
+        }
+      }
+    }
+  }
+
+  &.full-screen-it {
+    @include responsive-properties((
+        (height, (
+          v: calc(100vh - #{$header-mobile-banner-height} - #{$header-middle-height}),
+          v-md-up: calc(100vh - #{$header-top-height} - #{$header-middle-height-md} - #{$header-bottom-height})
+        )),
+    ));
+
+    .slider-body {
+      @include responsive-properties((
+          (height, (
+            v: calc(100vh - #{$header-mobile-banner-height} - #{$header-middle-height}),
+            v-md-up: calc(100vh - #{$header-top-height} - #{$header-middle-height-md} - #{$header-bottom-height})
+          )),
+      ));
+
+      .slider-slide {
+        @include responsive-properties((
+            (height, (
+              v: calc(100vh - #{$header-mobile-banner-height} - #{$header-middle-height}),
+              v-md-up: calc(100vh - #{$header-top-height} - #{$header-middle-height-md} - #{$header-bottom-height})
+            )),
+        ));
+
+        .slide-thumbnail {
+          @include responsive-properties((
+              (height, (
+                v: calc(100vh - #{$header-mobile-banner-height} - #{$header-middle-height}),
+                v-md-up: calc(100vh - #{$header-top-height} - #{$header-middle-height-md} - #{$header-bottom-height})
+              )),
+          ));
+        }
+      }
+    }
+  }
+
+  // Slick slider customizations
+  .slick-slider {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    .slick-arrow {
+      width: $font-size-h1;
+      font-size: $font-size-h1;
+      color: $white;
+      opacity: 1;
+      @include transition(font-size $transition-duration);
+
+      @include hover() {
+        width: $display3-size;
+        font-size: $display3-size;
+      }
+
+      &.slick-prev {
+        left: $spacer-x-sm;
+      }
+
+      &.slick-next {
+        right: $spacer-x-sm;
+      }
+    }
+
+    .slick-dots {
+      bottom: $spacer-y-lg;
+
+      li {
+
+        & + li {
+          margin-left: $spacer-x-sm;
+        }
+
+        button {
+          background-color: transparent;
+          opacity: 1;
+          @include transition(background-color $transition-duration);
+        }
+
+        &.slick-active {
+          button {
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}

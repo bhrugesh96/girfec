@@ -1,0 +1,20 @@
+.content-layout-item.links {
+  margin-bottom: $spacer-y-sm;
+
+  ul {
+    margin: 0;
+
+    li {
+
+      + li {
+        margin-top: $spacer-y-sm;
+      }
+
+      h3 {
+        margin: 0;
+        color: $lead-color;
+        font-size: $lead-font-size;
+      }
+    }
+  }
+}

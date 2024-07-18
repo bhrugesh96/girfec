@@ -1,0 +1,64 @@
+$fonts-path:                    '../fonts/';
+$images-path:                   '../images/';
+
+$font-family-sans-serif:        'usual', sans-serif;
+$font-family-base:              $font-family-sans-serif;
+$headings-font-family:          $font-family-sans-serif;
+$theme-icon-font-family:        'girfec';
+
+$transition-duration:           .5s !default;
+
+$font-size-root:                16px;
+
+$border-width:                  1px;
+$border-width-lg:               2px;
+
+$link-color:                    $purple-light;
+$link-decoration:               none;
+$link-hover-color:              darken($purple-light, 15%);
+$link-hover-decoration:         none;
+
+$font-weight-light:             300 !default;
+$font-weight-regular:           400 !default;
+$font-weight-medium:            600 !default;
+$font-weight-bold:              700;
+$font-weight-black:             800 !default;
+$font-weight-normal:            $font-weight-regular;
+$font-weight-base:              $font-weight-regular;
+
+$font-size-base:                1rem;
+$font-size-lg:                  1.25rem;
+$font-size-md:                  1.125rem;
+$font-size-md-em:               1.125em !default;
+$font-size-sm:                  .875rem;
+$font-size-sm-em:               .875em !default;
+$font-size-xs:                  .75rem;
+
+$font-size-h1:                  2.5rem;         // 40px
+$font-size-h2:                  2rem;           // 32px
+$font-size-h3:                  1.75rem;        // 28px
+$font-size-h4:                  1.5rem;         // 24px
+$font-size-h5:                  $font-size-lg;  // 20px
+$font-size-h6:                  $font-size-md;  // 18px
+
+$display1-size:                 4rem;
+$display2-size:                 3.5rem;
+$display3-size:                 3rem;
+$display4-size:                 2.5rem;
+
+$line-height-base:              1.5;
+$line-height-lg:                (4 / 3);
+$line-height-sm:                1.35;
+
+$headings-margin-bottom:        (decimal-round($font-size-root * $line-height-base) / 2);
+$headings-font-weight:          $font-weight-medium;
+$headings-line-height:          1.2;
+$font-size-headings:            (v: $font-size-h4, v-sm-up: $font-size-h3, v-lg-up: $font-size-h2, v-xl-up: $font-size-h1) !default;
+
+$border-radius:                 4px;
+$border-radius-sm:              2px;
+$border-radius-lg:              8px;
+
+$lead-font-size:                $font-size-md-em;
+$lead-color:                    $gray !default;
+$lead-font-weight:              $font-weight-regular;

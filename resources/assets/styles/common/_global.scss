@@ -1,0 +1,70 @@
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+html,
+body {
+  height: 100%;
+  font-size: $font-size-root;
+}
+
+body {
+  display: block !important;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  @include responsive-properties((
+      (padding-top, (v: $header-mobile-banner-height, v-md-up: 0)),
+  ));
+
+  &.side-nav-active,
+  &.login-active {
+    @include media-breakpoint-down(sm) {
+      overflow: hidden;
+    }
+  }
+}
+
+.wrap {
+  font-size: $font-size-root;
+  background-color: $wrap-bg;
+  overflow: hidden;
+
+  .font-medium & {
+    font-size: $font-size-root + 1;
+  }
+
+  .font-large & {
+    font-size: $font-size-root + 2;
+  }
+}
+
+.wrap-inner {
+  overflow: visible;
+  @include responsive-properties((
+      (padding-top, (v: $spacer-y, v-md-up: $spacer-y-md)),
+      (padding-bottom, (v: $spacer-y-md, v-md-up: $spacer-y-lg)),
+  ));
+
+  .page-template-template-full-width & {
+    padding: 0 !important;
+  }
+}
+
+.content-wrap {
+  overflow: hidden;
+
+  & + .content-wrap {
+    margin-top: $spacer-y-sm;
+  }
+}
+
+.layout-item {
+
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+}

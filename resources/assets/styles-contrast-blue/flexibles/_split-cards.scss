@@ -1,0 +1,92 @@
+.layout-item.split_cards {
+  background-color: $brand-primary;
+  @include responsive-properties((
+      (padding, (v: $spacer-y-lg 0, v-md-up: $spacer-y-lg 0, v-lg-up: $spacer-y-xl 0)),
+  ));
+
+  .sc-card {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: $blue-lighter;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 0 10px 0 rgba($black, .3);
+    display: flex;
+    flex-direction: column;
+    @include responsive-properties((
+        (padding, (v: 0 $spacer-x $spacer-y, v-lg-up: 0 $spacer-x-md $spacer-y-md)),
+    ));
+
+    .sc-card-thumbnail {
+      flex-shrink: 0;
+      @include border-top-radius($border-radius-lg);
+      @include responsive-properties((
+          (margin, (v: 0 ($spacer-x / -1), v-lg-up: 0 ($spacer-x-md / -1))),
+      ));
+
+      img {
+        @include img-fluid();
+        @include border-top-radius($border-radius-lg);
+      }
+    }
+
+    .sc-card-title {
+      margin-bottom: 0;
+      font-size: $font-size-h4;
+      font-weight: $font-weight-regular;
+      text-align: left;
+      @include responsive-properties((
+          (margin-top, (v: $spacer-y, v-lg-up: $spacer-y-md)),
+      ));
+    }
+
+    .sc-card-text {
+      margin-top: $spacer-y;
+      margin-bottom: $spacer-y;
+      color: $purple-light;
+      text-align: left;
+      font-size: $font-size-sm-em;
+      @include remove-last-p-margin();
+    }
+
+    .btn {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+  }
+
+  // Slick slider customizations
+  .slick-slider {
+
+    .slick-track {
+      display: flex;
+
+      .slick-slide{
+        display: flex;
+        height: auto;
+        align-items: stretch;
+        justify-content: center;
+      }
+    }
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      @include translateXY(-50, 0);
+
+      li {
+
+        button {
+          border: 2px solid $brand-secondary;
+          background-color: $brand-primary;
+        }
+
+        &.slick-active {
+          button {
+            background-color: $brand-secondary;
+          }
+        }
+      }
+    }
+  }
+}

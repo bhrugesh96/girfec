@@ -1,0 +1,108 @@
+.layout-item.what_is_girfec {
+  background-color: $gray-darkest;
+  @include responsive-properties((
+      (padding, (v: $spacer-y-lg 0, v-md-up: $spacer-y-lg 0, v-lg-up: $spacer-y-xl 0)),
+  ));
+
+  .wig-title {
+    color: $brand-primary;
+    margin: 0;
+    @include responsive-properties((
+        (font-size, (v: $font-size-h4, v-lg-up: $font-size-h3)),
+    ));
+  }
+
+  .wig-text {
+    color: rgba($brand-primary, .7);
+    @include remove-last-p-margin();
+    @include responsive-properties((
+        (margin-top, (v: $spacer-y-sm, v-md-up: $spacer-y-sm)),
+    ));
+  }
+
+  .wig-benefits {
+    padding: 0;
+    margin: $spacer-y-md 0 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .wig-benefit {
+      display: flex;
+      flex: 0 0 100%;
+
+      + .wig-benefit {
+        margin-top: 8px;
+      }
+
+      .wig-benefit-icon {
+        margin-right: $spacer-x-sm;
+        color: $white;
+        font-size: $font-size-h2;
+      }
+
+      .wig-benefit-title {
+        line-height: $headings-line-height;
+        margin-top: $spacer-y-xs;
+        font-weight: $font-weight-medium;
+        color: $white;
+      }
+    }
+  }
+
+  .wig-button {
+    @include responsive-properties((
+        (margin-top, (v: $spacer-y-md, v-md-up: $spacer-y-lg)),
+    ));
+  }
+
+  .wig-cta {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: $black;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 0 10px 0 rgba($black, .5);
+    display: flex;
+    flex-direction: column;
+    @include responsive-properties((
+        (padding, (v: 0 $spacer-x $spacer-y, v-lg-up: 0 $spacer-x-md $spacer-y-md)),
+        (margin-top, (v-sm-down: $spacer-y-lg)),
+    ));
+
+    .wig-cta-thumbnail {
+      flex-shrink: 0;
+      @include border-top-radius($border-radius-lg);
+      @include responsive-properties((
+          (margin, (v: 0 ($spacer-x / -1), v-lg-up: 0 ($spacer-x-md / -1))),
+      ));
+
+      img {
+        @include img-fluid();
+        @include border-top-radius($border-radius-lg);
+      }
+    }
+
+    .wig-cta-title {
+      margin-bottom: 0;
+      font-size: $font-size-h4;
+      font-weight: $font-weight-regular;
+      @include responsive-properties((
+          (margin-top, (v: $spacer-y, v-lg-up: $spacer-y-md)),
+      ));
+    }
+
+    .wig-cta-text {
+      margin-top: $spacer-y;
+      margin-bottom: $spacer-y;
+      color: $white;
+      font-size: $font-size-sm-em;
+      @include remove-last-p-margin();
+    }
+
+    .btn {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+  }
+}

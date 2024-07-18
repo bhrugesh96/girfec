@@ -1,0 +1,9 @@
+$footer-bg: $body-bg !default;
+$footer-color: $gray-darker !default;
+
+$footer-link-font-size: (v: $font-size-sm, v-lg-up: .9375rem) !default;
+$footer-link-color: $white !default;
+
+$footer-border: 1px solid darken($gray-darker, 10%) !default;
+$footer-padding-x: 0 !default;
+$footer-padding-y: $spacer-y !default;

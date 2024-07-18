@@ -1,0 +1,56 @@
+$btn-font-family:                $font-family-base;
+$btn-font-weight:                $font-weight-medium;
+$btn-box-shadow:                 none !important;
+$btn-focus-box-shadow:           none !important;
+$btn-active-box-shadow:          none !important;
+
+$btn-padding-x:                  1.25rem;
+$btn-padding-y:                  .8rem;
+$btn-padding-x-sm:               1rem;
+$btn-padding-y-sm:               .6rem;
+$btn-padding-x-lg:               2rem;
+$btn-padding-y-lg:               1.4rem;
+
+$btn-font-size:                  $font-size-sm;
+$btn-font-size-sm:               $font-size-xs !default;
+$btn-font-size-lg:               $font-size-base !default;
+
+$btn-line-height:                1.25;
+$btn-line-height-sm:             $btn-line-height;
+$btn-line-height-lg:             $btn-line-height;
+
+$btn-primary-color:              $white !important;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             $btn-primary-bg;
+
+$btn-secondary-color:            $white !important;
+$btn-secondary-bg:               $brand-secondary;
+$btn-secondary-border:           $btn-secondary-bg;
+
+$btn-info-color:                 $white !important;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                $btn-info-bg;
+
+$btn-success-color:              $white !important;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             $btn-success-bg;
+
+$btn-warning-color:              $white !important;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             $btn-warning-bg;
+
+$btn-danger-color:               $white !important;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              $btn-danger-bg;
+
+$btn-default-color:              $headings-color !default;
+$btn-default-bg:                 #e4e6e6 !default;
+$btn-default-border:             $btn-default-bg !default;
+
+$btn-blue-dark-color:            $white !default;
+$btn-blue-dark-bg:               $blue-dark !default;
+$btn-blue-dark-border:           $btn-blue-dark-bg !default;
+
+$btn-height:                     (($btn-font-size * $btn-line-height) + ($btn-padding-y * 2) + pxtorem(2 * $border-width));
+$btn-height-sm:                  (($btn-font-size-sm * $btn-line-height-sm) + ($btn-padding-y-sm * 2));
+$btn-height-lg:                  (($btn-font-size-lg * $btn-line-height-lg) + ($btn-padding-y-lg * 2));

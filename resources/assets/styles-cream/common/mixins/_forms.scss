@@ -1,0 +1,12 @@
+@mixin dropdown-arrow() {
+  @include theme-icon;
+  content: $custom-dropdown-arrow-icon;
+  position: absolute;
+  cursor: pointer;
+  pointer-events: none;
+  color: $custom-dropdown-arrow-color;
+  font-size: $custom-dropdown-arrow-font-size;
+  top: 50%;
+  right: $custom-dropdown-arrow-position;
+  margin-top: $custom-dropdown-arrow-font-size / -2;
+}

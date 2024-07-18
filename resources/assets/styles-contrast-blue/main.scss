@@ -1,0 +1,68 @@
+@import "common/functions";
+@import "common/variables";
+
+// Import npm dependencies
+@import "~bootstrap/scss/bootstrap";
+@import "~slick-carousel/slick/slick";
+@import "~magnific-popup/src/css/main.scss";
+
+@import "common/animations";
+@import "common/mixins";
+@import "common/global";
+
+// Components
+@import "components/buttons";
+@import "components/carousel";
+@import "components/cards";
+@import "components/comments";
+@import "components/forms";
+@import "components/feedback-form";
+@import "components/floating-element";
+@import "components/grid";
+@import "components/login-form";
+@import "components/utils";
+@import "components/pagination";
+@import "components/popup";
+@import "components/share";
+@import "components/sub-nav";
+@import "components/type";
+@import "components/wp-classes";
+
+// Layouts
+@import "layouts/accessibility";
+@import "layouts/event";
+@import "layouts/events";
+@import "layouts/header";
+@import "layouts/intranet";
+@import "layouts/sidebar";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/post";
+@import "layouts/tinymce";
+
+// Flexibles
+@import "flexibles/banner";
+@import "flexibles/content-block";
+@import "flexibles/contact-details";
+@import "flexibles/cta";
+@import "flexibles/form";
+@import "flexibles/post-type-carousel";
+@import "flexibles/slider";
+@import "flexibles/intro-block";
+@import "flexibles/split-cards";
+@import "flexibles/separator";
+@import "flexibles/subpages";
+@import "flexibles/what-is-girfec";
+
+@import "flexibles/page-content/page-title";
+@import "flexibles/page-content/lead";
+@import "flexibles/page-content/content-editor";
+@import "flexibles/page-content/benefits";
+@import "flexibles/page-content/form";
+@import "flexibles/page-content/document";
+@import "flexibles/page-content/video";
+@import "flexibles/page-content/image-grid";
+@import "flexibles/page-content/links";
+@import "flexibles/page-content/pie-chart";
+@import "flexibles/page-content/module";

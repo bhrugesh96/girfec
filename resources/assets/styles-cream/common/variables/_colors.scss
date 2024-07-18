@@ -1,0 +1,32 @@
+$blue:                      #000065;
+$blue-dark:                 $blue !default;
+$cream:                     #dfd179 !default;
+$cream-medium:              #c8bf7e !default;
+$cream-light:               darken(#f7f3d6, 6) !default;
+$cream-lighter:             #f7f3d6 !default;
+$green-light:               $blue !default;
+$yellow:                    $blue;
+
+$white:                     #fff;
+$black:                     darken($blue, 5);
+
+$gray-darkest:              #2f2f2f !default;
+$gray-darker:               #5a5b5b !default;
+$gray-dark:                 #8b8b8b;
+$gray:                      #9b9c9d;
+$gray-light:                #bdbdbd;
+$gray-lighter:              #ebebeb;
+$gray-lightest:             #f8f8f8;
+
+$brand-primary:             $blue;
+$brand-secondary:           $cream-light !default;
+$brand-success:             $blue;
+$brand-info:                $blue;
+$brand-warning:             $blue;
+$brand-danger:              $blue;
+$brand-inverse:             $gray-darker;
+
+$body-bg:                   $blue;
+$wrap-bg:                   $cream-lighter !default;
+$body-color:                $blue !default;
+$headings-color:            $blue;

@@ -1,0 +1,199 @@
+@mixin responsive-properties($properties) {
+  $actual-media-queries: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0;
+
+  @each $property, $attribute in $properties {
+
+    @if (map-has-key($attribute, v) and (index($actual-media-queries, v) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 1, v);
+    }
+
+    @if (map-has-key($attribute, v-xs) and (index($actual-media-queries, v-xs) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 2, v-xs);
+    }
+
+    @if (map-has-key($attribute, v-sm-down) and (index($actual-media-queries, v-sm-down) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 3, v-sm-down);
+    }
+
+    @if (map-has-key($attribute, v-sm-up) and (index($actual-media-queries, v-sm-up) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 4, v-sm-up);
+    }
+
+    @if (map-has-key($attribute, v-sm) and (index($actual-media-queries, v-sm) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 5, v-sm);
+    }
+
+    @if (map-has-key($attribute, v-md-down) and (index($actual-media-queries, v-md-down) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 6, v-md-down);
+    }
+
+    @if (map-has-key($attribute, v-md-up) and (index($actual-media-queries, v-md-up) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 7, v-md-up);
+    }
+
+    @if (map-has-key($attribute, v-md) and (index($actual-media-queries, v-md) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 8, v-md);
+    }
+
+    @if (map-has-key($attribute, v-lg-down) and (index($actual-media-queries, v-lg-down) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 9, v-lg-down);
+    }
+
+    @if (map-has-key($attribute, v-lg-up) and (index($actual-media-queries, v-lg-up) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 10, v-lg-up);
+    }
+
+    @if (map-has-key($attribute, v-lg) and (index($actual-media-queries, v-lg) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 11, v-lg);
+    }
+
+    @if (map-has-key($attribute, v-xl-up) and (index($actual-media-queries, v-xl-up) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 12, v-xl-up);
+    }
+
+    @if (map-has-key($attribute, v-xl-down) and (index($actual-media-queries, v-xl-down) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 13, v-xl-down);
+    }
+
+    @if (map-has-key($attribute, v-xl) and (index($actual-media-queries, v-xl) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 14, v-xl);
+    }
+
+    @if (map-has-key($attribute, v-xxl-up) and (index($actual-media-queries, v-xxl-up) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 15, v-xxl-up);
+    }
+
+    @if (map-has-key($attribute, v-xxl-down) and (index($actual-media-queries, v-xxl-down) == null)) {
+      $actual-media-queries: replace-nth($actual-media-queries, 16, v-xxl-down);
+    }
+  }
+
+  @each $media-query in $actual-media-queries {
+
+    @if ($media-query == v) {
+      @each $property, $attribute in $properties {
+        #{$property}: map-get($attribute, v);
+      }
+    }
+
+    @if ($media-query == v-xs) {
+      @include media-breakpoint-only(xs){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-xs);
+        }
+      }
+    }
+
+    @if ($media-query == v-sm-down) {
+      @include media-breakpoint-down(sm){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-sm-down);
+        }
+      }
+    }
+
+    @if ($media-query == v-sm-up) {
+      @include media-breakpoint-up(sm){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-sm-up);
+        }
+      }
+    }
+
+    @if ($media-query == v-sm) {
+      @include media-breakpoint-only(sm){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-sm);
+        }
+      }
+    }
+
+    @if ($media-query == v-md-down) {
+      @include media-breakpoint-down(md){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-md-down);
+        }
+      }
+    }
+
+    @if ($media-query == v-md-up) {
+      @include media-breakpoint-up(md){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-md-up);
+        }
+      }
+    }
+
+    @if ($media-query == v-md) {
+      @include media-breakpoint-only(md){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-md);
+        }
+      }
+    }
+
+    @if ($media-query == v-lg-down) {
+      @include media-breakpoint-down(lg){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-lg-down);
+        }
+      }
+    }
+
+    @if ($media-query == v-lg-up) {
+      @include media-breakpoint-up(lg){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-lg-up);
+        }
+      }
+    }
+
+    @if ($media-query == v-lg) {
+      @include media-breakpoint-only(lg) {
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-lg);
+        }
+      }
+    }
+
+    @if ($media-query == v-xl-down) {
+      @include media-breakpoint-down(xl){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-xl-down);
+        }
+      }
+    }
+
+    @if ($media-query == v-xl-up) {
+      @include media-breakpoint-up(xl){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-xl-up);
+        }
+      }
+    }
+
+    @if ($media-query == v-xl) {
+      @include media-breakpoint-only(xl) {
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-xl);
+        }
+      }
+    }
+
+    @if ($media-query == v-xxl-down) {
+      @include media-breakpoint-down(xxl){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-xxl-down);
+        }
+      }
+    }
+
+    @if ($media-query == v-xxl-up) {
+      @include media-breakpoint-up(xxl){
+        @each $property, $attribute in $properties {
+          #{$property}: map-get($attribute, v-xxl-up);
+        }
+      }
+    }
+  }
+}

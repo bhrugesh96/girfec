@@ -1,0 +1,23 @@
+@mixin card-toggle-variant($parent, $background) {
+  #{$parent} {
+
+    .card-toggle i {
+      &:before,
+      &:after {
+        background-color: $background;
+      }
+    }
+
+    .collapsed .card-toggle i {
+      background-color: $background;
+    }
+  }
+}
+
+@mixin card-block-variant($parent, $border) {
+  #{$parent} {
+    .card-block {
+      border-color: $border;
+    }
+  }
+}

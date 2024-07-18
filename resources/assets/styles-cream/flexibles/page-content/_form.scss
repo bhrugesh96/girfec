@@ -1,0 +1,59 @@
+.content-layout-item.form {
+  margin-bottom: $spacer-y-sm;
+
+  // Input
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  .chosen-single {
+    border-color: $cream;
+
+    &:focus {
+      border-color: $brand-primary;
+    }
+  }
+
+  // Checkbox & Radio
+  .gfield_checkbox,
+  .gfield_radio {
+    @include list-unstyled;
+
+    input[type=radio] {
+      display: none;
+
+      &:checked + label {
+
+        &:after {
+          background: $brand-primary;
+        }
+      }
+    }
+
+    label {
+      color: $brand-primary;
+      font-weight: $font-weight-base;
+
+      &:before {
+        border: $input-btn-border-width solid $cream;
+      }
+    }
+  }
+
+  // Label
+  .gfield_label {
+    color: $brand-primary !important;
+  }
+}

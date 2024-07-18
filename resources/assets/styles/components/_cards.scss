@@ -1,0 +1,146 @@
+.card {
+  overflow: hidden;
+  box-shadow: none !important;
+
+  &.card-default {
+    border: 1px solid $gray-lightest;
+  }
+}
+
+.card-secondary {
+  @include card-variant($card-secondary-heading-bg, $card-secondary-border);
+}
+
+.card-header {
+  padding: 0;
+  position: relative;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+
+  a {
+    display: block;
+    padding: $card-header-padding;
+    color: $white;
+
+    .card-default & {
+      color: $body-color;
+    }
+  }
+}
+
+.card-title {
+  font-weight: $font-weight-medium;
+}
+
+.card-body {
+  border-top: 1px solid transparent;
+}
+
+@include card-block-variant('.card-default', $card-default-border);
+@include card-block-variant('.card-primary', $card-primary-border);
+@include card-block-variant('.card-secondary', $card-secondary-border);
+@include card-block-variant('.card-warning', $card-warning-border);
+@include card-block-variant('.card-danger', $card-danger-border);
+@include card-block-variant('.card-success', $card-success-border);
+@include card-block-variant('.card-info', $card-info-border);
+
+.card-toggle {
+  padding: $card-toggle-bar-padding-y $card-toggle-bar-padding-x;
+  margin-top: ($card-toggle-bar-height / -2);
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+  @include transition(right .5s ease);
+
+  @include hover-focus-active{
+    outline: none !important;
+  }
+
+  i {
+    width: $card-toggle-bar-width;
+    height: $card-toggle-bar-height;
+    display: block;
+    background-color: transparent;
+
+    &:before,
+    &:after {
+      content: "";
+      width: $card-toggle-bar-width;
+      height: $card-toggle-bar-height;
+      display: block;
+      position: absolute;
+      background-color: $card-toggle-bar-bg;
+      @include transition(transform .5s ease);
+    }
+
+    &:before {
+      -webkit-transform: translateY(0) rotate(45deg);
+      -ms-transform: translateY(0) rotate(45deg);
+      transform: translateY(0) rotate(45deg);
+    }
+
+    &:after {
+      -webkit-transform: translateY(0) rotate(-45deg);
+      -ms-transform: translateY(0) rotate(-45deg);
+      transform: translateY(0) rotate(-45deg);
+    }
+  }
+
+  .collapsed & {
+
+    i {
+      background-color: $card-toggle-bar-bg;
+
+      &:before {
+        @include translateY($card-toggle-bar-height + $card-toggle-bar-margin);
+      }
+
+      &:after {
+        @include translateY(($card-toggle-bar-height + $card-toggle-bar-margin) / -1);
+      }
+    }
+  }
+}
+
+@include card-toggle-variant('.card-default', $brand-primary);
+@include card-toggle-variant('.card-primary', #fff);
+@include card-toggle-variant('.card-secondary', #fff);
+@include card-toggle-variant('.card-warning', #fff);
+@include card-toggle-variant('.card-success', #fff);
+@include card-toggle-variant('.card-info', #fff);
+@include card-toggle-variant('.card-danger', #fff);
+
+.card-responsive {
+  @include media-breakpoint-up(md) {
+    border: 0;
+  }
+
+  .card-header {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  .card-collapse {
+    @include media-breakpoint-up(md) {
+      height: auto!important;
+      border-top: 0;
+    }
+
+    &.collapse {
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
+    }
+
+    .card-block {
+
+      @include media-breakpoint-up(md) {
+        padding: 0;
+        border: 0;
+      }
+    }
+  }
+}

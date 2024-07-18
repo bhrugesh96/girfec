@@ -1,0 +1,156 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  @include media-breakpoint-down(sm) {
+    margin-top: $spacer-y
+  }
+
+  .widget {
+    max-width: 360px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $brand-primary;
+    border-radius: $border-radius-lg;
+    @include responsive-properties((
+        (padding, (v: $spacer-y $spacer-x, v-lg-up: $spacer-y-md $spacer-x-md)),
+    ));
+
+    & + .widget {
+      margin-top: $spacer-y;
+    }
+
+    .widget-title {
+      margin-bottom: $spacer-y;
+      color: $white;
+      font-size: $font-size-h4;
+      font-weight: $font-weight-regular;
+    }
+
+    &.widget_girfec {
+      padding: 0;
+      border-radius: 0;
+      background-color: transparent;
+
+      .widget-inner {
+        border-radius: $border-radius-lg;
+        @include responsive-properties((
+            (padding, (v: $spacer-y $spacer-x, v-lg-up: $spacer-y $spacer-x-md)),
+        ));
+      }
+    }
+
+    // Download
+    &.widget_girfec_download {
+
+      .widget-inner {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        @include responsive-properties((
+            (padding, (v-lg-up: $spacer-y $spacer-x-md)),
+        ));
+
+        .wgd-title {
+          margin: 0;
+          color: $white;
+          font-weight: $font-weight-base;
+          line-height: $line-height-sm;
+          margin-right: $spacer-y-sm;
+          @include responsive-properties((
+              (font-size, (v: 1.375rem, v-xl-up: $font-size-h4)),
+          ));
+        }
+
+        .wgd-icon {
+          margin-left: auto;
+          color: $white;
+          @include responsive-properties((
+              (font-size, (v: 4.625rem)),
+          ));
+        }
+      }
+    }
+
+    // Page Links
+    &.widget_girfec_page_links {
+
+      .wgpl-title {
+        color: $white;
+        font-weight: $font-weight-regular;
+        font-size: $font-size-h4;
+        margin-bottom: $spacer-y;
+        margin-top: $spacer-y-xs;
+      }
+
+      .wgpl-links {
+
+        .wgpl-links-item {
+
+          .wgpl-link {
+            display: block;
+            color: $white;
+            font-size: $sub-nav-item-font-size;
+            font-weight: $sub-nav-item-font-weight;
+            @include responsive-properties((
+                (padding, (v: $sub-nav-item-padding-y 0, v-md-up: $spacer-y-xs 0)),
+            ));
+
+            @include hover-focus {
+              color: rgba($white, .7);
+            }
+          }
+        }
+      }
+
+      .wgpl-footnote {
+        color: $white;
+        font-size: $font-size-xs;
+        font-style: italic;
+      }
+    }
+  }
+
+  // Sub Nav
+  .sub-nav {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  // Floating Element
+  .floating-element {
+    padding-top: $spacer-y;
+    width: 100% !important;
+    font-size: 0;
+    @include responsive-properties((
+        (display, (v-sm-down: none !important)),
+    ));
+
+    .floating-element-inner {
+      margin-bottom: 0;
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    &.hpos-left {
+      text-align: left;
+    }
+
+    &.hpos-center {
+      text-align: center;
+    }
+
+    &.hpos-right {
+      text-align: right;
+    }
+
+    &.vpos-bottom {
+      margin-top: auto;
+      @include responsive-properties((
+          (margin-bottom, (v: $spacer-y-md / -1, v-md-up: $spacer-y-lg / -1)),
+      ));
+    }
+  }
+}

@@ -1,0 +1,16 @@
+$sub-nav-height: 50px !default;
+$sub-nav-padding: 0 !default;
+$sub-nav-bg: (v: $black) !default;
+$sub-nav-border-radius: $border-radius-lg !default;
+
+$sub-nav-title-padding-x: $spacer-x-md !default;
+$sub-nav-title-padding-y: ($sub-nav-height - remtopx(get-text-height($font-size-base, $headings-line-height))) / 2 !default;
+$sub-nav-title-color: (v: $brand-primary) !default;
+$sub-nav-title-font-size: $font-size-base !default;
+$sub-nav-title-font-weight: (v: $font-weight-medium, v-md-up: $font-weight-base) !default;
+
+$sub-nav-item-padding-x: $spacer-x-md !default;
+$sub-nav-item-padding-y: ($sub-nav-height - remtopx(get-text-height($font-size-base))) / 2 !default !default;
+$sub-nav-item-color: (v: $brand-primary) !default;
+$sub-nav-item-font-size: $font-size-base !default;
+$sub-nav-item-font-weight: $font-weight-medium !default;

@@ -1,0 +1,4 @@
+a {
+  outline: none !important;
+  @include transition($btn-transition);
+}

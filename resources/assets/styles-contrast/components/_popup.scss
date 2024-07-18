@@ -1,0 +1,96 @@
+.mfp-wrap {
+  z-index: 9999;
+
+  .mfp-container {
+    cursor: default;
+
+    .mfp-figure {
+
+      .mfp-bottom-bar {
+        padding: $spacer-x-sm;
+        margin-top: -40px;
+        font-size: $font-size-sm;
+        font-family: $font-family-base;
+        background-color: $gray-lightest;
+
+        .mfp-counter {
+          top: 50%;
+          right: $spacer-x-sm;
+          font-size: $font-size-sm;
+          font-family: $font-family-base;
+          @include translateY(-50%);
+        }
+      }
+    }
+
+    .mfp-close {
+      width: auto;
+      padding: 0;
+      position: fixed;
+      left: auto;
+      right: (pxtorem($spacer-y-xl) - $font-size-h2) / 2;
+      top: (pxtorem($spacer-y-xl) - $font-size-h2) / 2;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 0;
+      @include theme-icon();
+      @include transition(all, $transition-duration);
+
+      &:before {
+        content: '\E90F';
+        font-size: $font-size-h2;
+        @include transition(font-size, $transition-duration);
+      }
+
+      @include hover {
+        right: (pxtorem($spacer-y-xl) - $font-size-h1) / 2;
+        top: (pxtorem($spacer-y-xl) - $font-size-h1) / 2;
+
+        &:before {
+          font-size: $font-size-h1;
+        }
+      }
+    }
+
+    .mfp-arrow {
+      width: $spacer-x-xl;
+      color: $white;
+      @include theme-icon();
+
+      &:before {
+        width: auto;
+        height: auto;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        font-size: $font-size-h2;
+        border: 0;
+        opacity: 1;
+        @include translateXY(-50%, -50%);
+        @include transition(font-size, $transition-duration);
+      }
+
+      &:after {
+        content: none;
+      }
+
+      &.mfp-arrow-right:before {
+        content: '\E906';
+      }
+
+      &.mfp-arrow-left:before {
+        content: '\E901';
+      }
+
+      @include hover {
+        &:before {
+          font-size: $font-size-h1;
+        }
+      }
+    }
+  }
+}
+
+.mfp-bg {
+  z-index: 9998;
+}

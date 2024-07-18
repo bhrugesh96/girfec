@@ -1,0 +1,22 @@
+.girfec-login-form {
+  max-width: 450px;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  text-align: center;
+  @include responsive-properties((
+      (padding, (v: $spacer-y $spacer-x, v-md-up: $spacer-y-md $spacer-x-lg)),
+      (margin, (v: $spacer-y-md auto, v-md-up: $spacer-y-lg auto, v-lg-up: $spacer-y-xl auto)),
+  ));
+
+  h3 {
+    margin-bottom: $spacer-y;
+  }
+
+  .form-group:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .btn {
+    margin-top: $spacer-y;
+  }
+}

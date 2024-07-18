@@ -1,0 +1,30 @@
+.btn {
+  font-family: $btn-font-family;
+  font-size: $btn-font-size;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none !important;
+  white-space: normal;
+}
+
+.btn-lg {
+  font-size: $btn-font-size-lg;
+}
+
+.btn-sm {
+  font-size: $btn-font-size-sm;
+}
+
+.btn-default {
+  @include button-variant($btn-default-color !important, $btn-default-bg, $btn-default-border);
+
+  @include hover-focus-active {
+    background-color: $gray-darkest;
+    border-color: $gray-darkest;
+  }
+}
+
+.btn-blue-dark {
+  @include button-variant($btn-blue-dark-color !important, $btn-blue-dark-bg, $btn-blue-dark-border);
+}

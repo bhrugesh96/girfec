@@ -1,0 +1,63 @@
+.layout-item.form {
+  text-align: center;
+  @include responsive-properties((
+      (padding, (v: $spacer-y-lg 0, v-md-up: $spacer-y-lg 0, v-lg-up: $spacer-y-xl 0)),
+  ));
+
+  .form-title {
+    max-width: 600px;
+    @include responsive-properties((
+        (margin, (v: 0 auto $spacer-y, v-md-up: 0 auto $spacer-y-md)),
+        (font-size, (v: $font-size-h4, v-lg-up: $font-size-h3)),
+    ));
+  }
+
+  .form-text {
+    max-width: 600px;
+    margin: $spacer-y auto 0;
+    color: $gray;
+    @include remove-last-p-margin();
+  }
+
+  .form-wrap {
+    text-align: left;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: percentage(10 / $grid-columns);
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: percentage(8 / $grid-columns);
+    }
+
+    .gform_confirmation_message {
+      text-align: center;
+    }
+  }
+
+  &.bg-primary {
+
+    .form-title,
+    .form-text {
+      color: $white;
+    }
+
+    .form-control {
+      border-color: $brand-primary;
+    }
+  }
+
+  &.bg-secondary {
+
+    .form-title,
+    .form-text {
+      color: $white;
+    }
+
+    .form-control {
+      border-color: $brand-secondary;
+    }
+  }
+}

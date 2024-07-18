@@ -1,0 +1,110 @@
+.content-info {
+  background-color: $footer-bg;
+
+  p {
+    margin-bottom: 0;
+    color: $footer-color;
+  }
+
+  .top {
+    padding: $footer-padding-y $footer-padding-x;
+    border-bottom: $footer-border;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include responsive-properties((
+          (flex-direction, (v: column, v-xl-up: row)),
+          (justify-content, (v-xl-up: space-between)),
+      ));
+    }
+
+    .nav-footer {
+      flex: 1 1 auto;
+      @include responsive-properties((
+          (margin-bottom, (v: $spacer-y, v-xl-up: 0)),
+      ));
+
+      .nav {
+        display: flex;
+        align-items: stretch;
+        align-content: stretch;
+
+        .menu-item {
+          display: flex;
+          flex: 1 1 auto;
+
+          a {
+            display: flex;
+            flex: 1;
+            font-weight: $font-weight-medium;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: $btn-padding-y-sm $spacer-x-sm;
+            color: $footer-link-color;
+            @include responsive-properties((
+                (font-size, $footer-link-font-size),
+            ));
+
+            @include hover-focus-active() {
+              color: $footer-color;
+            }
+          }
+
+          &.active {
+
+            a {
+              color: $footer-color;
+            }
+          }
+
+          &:first-of-type {
+
+            a {
+              padding-left: 0;
+            }
+          }
+
+          &:last-of-type {
+
+            a {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    padding: $footer-padding-y $footer-padding-x;
+    font-size: $font-size-sm;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      @include media-breakpoint-up(md) {
+        flex-direction: row;
+      }
+    }
+
+    .websiteby {
+      @include responsive-properties((
+          (margin-top, (v: $spacer-y-sm, v-md-up: 0)),
+      ));
+
+      a {
+        color: $footer-color;
+
+        @include hover-focus-active() {
+          color: $footer-link-color;
+        }
+      }
+    }
+  }
+}

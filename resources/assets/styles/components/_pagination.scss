@@ -1,0 +1,65 @@
+.pagination {
+  margin-bottom: 0;
+
+  .page-item {
+    display: inline-block;
+
+    & + .page-item {
+      margin-left: $pagination-margin;
+    }
+
+    .page-link {
+      width: $pagination-width;
+      height: $pagination-height;
+      line-height: $pagination-height;
+      display: inline-block;
+      font-size: $pagination-font-size;
+      font-weight: $pagination-font-weight;
+      text-align: center;
+      border-radius: $pagination-border-radius !important;
+
+      @include hover-focus-active() {
+        color: $pagination-hover-color;
+        font-size: $pagination-hover-font-size;
+        font-weight: $pagination-hover-font-weight;
+        background-color: $pagination-hover-bg;
+        border: $pagination-border-width solid $pagination-hover-border-color;
+      }
+    }
+
+    &.active {
+      .page-link {
+        color: $pagination-active-color;
+        font-size: $pagination-active-font-size;
+        font-weight: $pagination-active-font-weight;
+        background-color: $pagination-active-bg;
+        border: $pagination-border-width solid $pagination-active-border-color;
+      }
+    }
+  }
+}
+
+ul.page-numbers {
+  @extend .pagination;
+
+  li {
+    @extend .page-item;
+
+    span,
+    a {
+      @extend .page-link;
+    }
+
+    .current {
+      color: $pagination-active-color;
+      font-size: $pagination-active-font-size;
+      font-weight: $pagination-active-font-weight;
+      background-color: $pagination-active-bg;
+      border: $pagination-border-width solid $pagination-active-border-color;
+    }
+  }
+}
+
+.nav-posts {
+  margin-top: $spacer-y;
+}

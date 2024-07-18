@@ -1,0 +1,28 @@
+$grid-gutter-width-base: 20px;
+$main-md-columns:       12;
+$sidebar-md-columns:    4;
+
+$grid-gutter-widths: (
+  xs: $grid-gutter-width-base,
+  sm: $grid-gutter-width-base,
+  md: $grid-gutter-width-base,
+  lg: $grid-gutter-width-base,
+  xl: $grid-gutter-width-base
+);
+
+$grid-gutter-widths-sm: (
+  xs: $grid-gutter-width-base / 2,
+  sm: $grid-gutter-width-base / 2,
+  md: $grid-gutter-width-base / 2,
+  lg: $grid-gutter-width-base / 2,
+  xl: $grid-gutter-width-base / 2
+);
+
+$grid-gutter-widths-zero: (
+  xs: 0,
+  sm: 0,
+  md: 0,
+  lg: 0,
+  xl: 0,
+  xxl: 0
+);

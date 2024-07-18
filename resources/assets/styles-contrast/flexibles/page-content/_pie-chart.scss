@@ -1,0 +1,64 @@
+.content-layout-item.pie_chart {
+  margin-bottom: $spacer-y-sm;
+
+  .chart-wrap {
+    max-width: 430px;
+    margin: 0 auto;
+
+    .chart-container {
+      position: relative;
+      width: 100%;
+      padding-top: 100%;
+
+      .chart-div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        .amcharts-main-div {
+
+          .amcharts-chart-div {
+
+            .amcharts-pie-item {
+              @include transition(opacity .2s ease-in-out);
+            }
+
+            > a {
+              display: none !important;
+            }
+
+            tspan {
+              font-weight: $font-weight-medium;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .chart-items {
+    @include responsive-properties((
+        (margin-top, (v-md-down: $spacer-y-sm)),
+        (text-align, (v-md-down: center)),
+    ));
+
+    .chart-item {
+      display: none;
+
+      .chart-item-title {
+        font-size: $font-size-md-em;
+        color: $white;
+      }
+
+      .chart-item-text {
+        font-size: $font-size-sm-em;
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

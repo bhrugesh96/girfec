@@ -1,0 +1,31 @@
+.content-layout-item.document {
+  .file {
+    padding: $spacer-y-xs $spacer-x-sm;
+    display: flex;
+    align-items: center;
+
+    i {
+      margin-right: $spacer-x;
+      display: inline-block;
+      color: $brand-primary;
+      font-size: $font-size-lg;
+    }
+
+    .file-title {
+      margin-bottom: 0;
+      margin-right: $spacer-x;
+      font-size: $font-size-base;
+      font-weight: $font-weight-regular;
+    }
+
+    .btn {
+      margin-left: auto;
+    }
+  }
+
+  &:nth-of-type(even) {
+    .file {
+      background-color: $gray-lightest;
+    }
+  }
+}

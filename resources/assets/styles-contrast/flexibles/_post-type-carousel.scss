@@ -1,0 +1,118 @@
+.layout-item.post_type_carousel {
+  text-align: center;
+  background-color: $gray-dark;
+  @include responsive-properties((
+      (padding, (v: $spacer-y-lg 0, v-md-up: $spacer-y-lg 0, v-lg-up: $spacer-y-xl 0)),
+  ));
+
+  .ptc-title {
+    max-width: 600px;
+    margin: 0 auto;
+    @include responsive-properties((
+        (font-size, (v: $font-size-h4, v-lg-up: $font-size-h3)),
+    ));
+  }
+
+  .ptc-text {
+    max-width: 600px;
+    color: $brand-primary;
+    @include remove-last-p-margin();
+    @include responsive-properties((
+        (margin, (v: $spacer-y-sm auto $spacer-y, v-md-up: $spacer-y-sm auto $spacer-y-lg )),
+    ));
+  }
+
+  .ptc-post {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: $black;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 0 10px 0 rgba($black, .3);
+    display: flex;
+    flex-direction: column;
+    @include responsive-properties((
+        (padding, (v: 0 $spacer-x $spacer-y, v-lg-up: 0 $spacer-x-md $spacer-y-md)),
+    ));
+
+    .ptc-post-thumbnail {
+      flex-shrink: 0;
+      @include border-top-radius($border-radius-lg);
+      @include responsive-properties((
+          (margin, (v: 0 ($spacer-x / -1), v-lg-up: 0 ($spacer-x-md / -1))),
+      ));
+
+      img {
+        @include img-fluid();
+        @include border-top-radius($border-radius-lg);
+      }
+    }
+
+    .ptc-post-title {
+      margin-bottom: 0;
+      font-size: $font-size-h4;
+      font-weight: $font-weight-regular;
+      text-align: left;
+      @include responsive-properties((
+          (margin-top, (v: $spacer-y, v-lg-up: $spacer-y-md)),
+      ));
+    }
+
+    .ptc-post-extra-field {
+      margin-bottom: 0;
+      font-size: $font-size-md;
+      font-weight: $font-weight-regular;
+      color: $white;
+      text-align: left;
+    }
+
+    .ptc-post-text {
+      margin-top: $spacer-y;
+      margin-bottom: $spacer-y;
+      color: $white;
+      text-align: left;
+      font-size: $font-size-sm-em;
+      @include remove-last-p-margin();
+    }
+
+    .btn {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+  }
+
+  // Slick slider customizations
+  .slick-slider {
+
+    .slick-track {
+      display: flex;
+
+      .slick-slide{
+        display: flex;
+        height: auto;
+        align-items: stretch;
+        justify-content: center;
+      }
+    }
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      @include translateXY(-50, 0);
+
+      li {
+
+        button {
+          border: 2px solid $brand-primary;
+          background-color: $gray-dark;
+        }
+
+        &.slick-active {
+          button {
+            background-color: $brand-primary;
+          }
+        }
+      }
+    }
+  }
+}

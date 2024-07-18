@@ -1,0 +1,68 @@
+.layout-item.contact_details {
+  text-align: center;
+  background-color: $white;
+  @include responsive-properties((
+      (padding, (v: $spacer-y-lg 0, v-md-up: $spacer-y-lg 0, v-lg-up: $spacer-y-xl 0)),
+  ));
+
+  .cd-title {
+    max-width: 600px;
+    margin: 0 auto;
+    @include responsive-properties((
+        (font-size, (v: $font-size-h4, v-lg-up: $font-size-h3)),
+    ));
+  }
+
+  .cd-text {
+    max-width: 600px;
+    margin: $spacer-y auto 0;
+    color: $gray;
+    @include remove-last-p-margin();
+  }
+
+  .cd-contact-blocks {
+    @include responsive-properties((
+        (margin-top, (v: $spacer-y, v-md-up: $spacer-y-lg)),
+    ));
+
+    .cd-contact-block {
+      @include make-col(12);
+
+      @include media-breakpoint-up(md) {
+        margin-top: 0 !important;
+        @include make-col(4);
+      }
+
+      & + .cd-contact-block {
+        margin-top: $spacer-y;
+      }
+
+      .cd-contact-block-title {
+        font-size: $font-size-h5;
+      }
+
+      .cd-contact-block-contact {
+        font-size: $font-size-base;
+      }
+
+      .cd-contact-block-email,
+      .cd-contact-block-phone,
+      .cd-contact-block-address {
+        margin: 0;
+        color: $gray;
+
+        a {
+          color: $gray;
+
+          @include hover-focus() {
+            color: $brand-primary;
+          }
+        }
+
+        span {
+          color: $brand-primary;
+        }
+      }
+    }
+  }
+}

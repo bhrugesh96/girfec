@@ -1,0 +1,135 @@
+.layout-item.intro_block {
+  background-color: $white;
+  @include responsive-properties((
+      (padding, (v: $spacer-y-lg 0, v-md-up: $spacer-y-lg 0, v-lg-up: $spacer-y-xl 0)),
+  ));
+
+  .ib-title {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    @include responsive-properties((
+        (font-size, (v: $font-size-h4, v-lg-up: $font-size-h3)),
+    ));
+  }
+
+  .ib-text {
+    max-width: 600px;
+    color: $gray;
+    text-align: center;
+    @include remove-last-p-margin();
+    @include responsive-properties((
+        (margin, (v: $spacer-y-sm auto 0, v-md-up: $spacer-y-sm auto 0)),
+    ));
+  }
+
+  .ib-pages {
+    @include responsive-properties((
+        (padding-bottom, (v-md-up: $spacer-y)),
+    ));
+
+    .ib-page {
+      padding-top: $spacer-y-lg;
+      @include media-breakpoint-up(md) {
+        margin: $spacer-x-sm 0;
+        @include make-col(4);
+      }
+
+      .ib-page-inner {
+        padding-top: $spacer-y-lg;
+        overflow-x: hidden;
+      }
+
+      a {
+        overflow: visible;
+        display: block;
+        position: relative;
+        height: 240px;
+        max-width: 360px;
+        margin: 0 auto;
+
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: transparent;
+          @include transition($btn-transition);
+        }
+
+        .floating-element {
+          display: block;
+
+          &.hpos-right {
+            right: 0 !important;
+          }
+
+          &.hpos-left {
+            left: 0 !important;
+          }
+
+          .floating-element-inner {
+            @include translateX(0);
+          }
+        }
+
+        .ib-page-title {
+          position: absolute;
+          color: $white;
+          margin: 0;
+          bottom: $spacer-y-md;
+          font-weight: $font-weight-regular;
+          z-index: 100;
+          @include responsive-properties((
+              (font-size, (v: 1.4375rem, v-xl-up: $font-size-h4)),
+              (left, (v: $spacer-x-md, v-md: $spacer-x, v-lg-up: $spacer-x-md)),
+          ));
+        }
+
+        @include hover-focus() {
+
+          &:before {
+            background-color: rgba($black, .15);
+          }
+        }
+      }
+    }
+  }
+
+  // Slick slider customizations
+  .slick-slider {
+    overflow-x: hidden;
+
+    &.slick-dotted {
+      @include responsive-properties((
+          (padding-bottom, (v: $spacer-y-lg, v-md-up: $spacer-y)),
+      ));
+    }
+
+    .slick-list {
+      overflow: visible;
+    }
+
+    .slick-dots {
+      bottom: 0;
+      @include translateXY(-50%, 0);
+
+      li {
+
+        button {
+          border: 2px solid $gray-light;
+          background-color: $white;
+        }
+
+        &.slick-active {
+          button {
+            background-color: $gray-light;
+          }
+        }
+      }
+    }
+  }
+}

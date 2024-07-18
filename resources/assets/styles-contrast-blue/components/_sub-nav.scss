@@ -1,0 +1,115 @@
+.sub-nav {
+  margin-bottom: $spacer-y;
+
+  @include media-breakpoint-up(md) {
+    padding: $spacer-y-sm 0 $spacer-y;
+    border-radius: $sub-nav-border-radius;
+    @include responsive-properties((
+        (background-color, $sub-nav-bg),
+    ));
+  }
+
+  .main & {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  .sub-nav-title {
+    padding: $sub-nav-title-padding-y $sub-nav-title-padding-x;
+    @include responsive-properties((
+        (color, $sub-nav-item-color),
+        (display, (v-sm-down: none)),
+        (font-weight, $sub-nav-title-font-weight),
+    ));
+  }
+
+  .card {
+    margin: 0;
+    font-size: 0;
+    border: 0;
+    @include responsive-properties((
+        (background-color, $sub-nav-bg),
+    ));
+
+    .card-header {
+      margin-bottom: 0;
+      @include responsive-properties((
+          (background-color, $sub-nav-bg),
+      ));
+
+      a {
+        padding: $sub-nav-title-padding-y 60px $sub-nav-title-padding-y 20px;
+        font-size: $sub-nav-title-font-size;
+        @include truncate-ellipsis;
+        @include responsive-properties((
+            (color, $sub-nav-title-color),
+            (font-weight, $sub-nav-title-font-weight),
+        ));
+      }
+
+      .card-toggle i {
+        &:before,
+        &:after {
+          @include responsive-properties((
+              (background-color, $sub-nav-title-color),
+          ));
+        }
+      }
+
+      .collapsed .card-toggle i {
+        @include responsive-properties((
+            (background-color, $sub-nav-title-color),
+        ));
+      }
+    }
+
+    .card-collapse {
+      @include responsive-properties((
+          (background-color, $sub-nav-bg),
+          (border-top, (v-sm-down: 1px solid rgba(255, 255, 255, .1))),
+      ));
+    }
+
+    .card-block {
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0;
+      font-size: 0;
+    }
+  }
+
+  .nav {
+
+    > li {
+      margin: 0;
+
+      & + li {
+        margin-top: 1px;
+      }
+
+      > a {
+        display: block;
+        position: relative;
+        font-size: $sub-nav-item-font-size;
+        font-weight: $sub-nav-item-font-weight;
+        opacity: .7;
+        @include responsive-properties((
+            (padding, (v: $sub-nav-item-padding-y $sub-nav-item-padding-x, v-md-up: $spacer-y-xs $sub-nav-item-padding-x)),
+            (color, $sub-nav-item-color),
+        ));
+
+        @include hover-focus-active() {
+          opacity: 1;
+        }
+      }
+
+      &.active {
+
+        a {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

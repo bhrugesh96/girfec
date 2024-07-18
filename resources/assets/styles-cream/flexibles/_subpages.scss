@@ -1,0 +1,95 @@
+.layout-item.subpages {
+  background-color: $brand-primary;
+  @include responsive-properties((
+      (padding, (v: $spacer-y-lg 0, v-md-up: $spacer-y-lg 0, v-lg-up: $spacer-y-xl 0)),
+  ));
+
+  .subpage {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: $cream-lighter;
+    border-radius: $border-radius-lg;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    @include responsive-properties((
+        (padding, (v: 0 $spacer-x $spacer-y, v-lg-up: 0 $spacer-x-md $spacer-y-md)),
+    ));
+
+    .subpage-thumbnail {
+      flex-shrink: 0;
+      @include border-top-radius($border-radius-lg);
+      @include responsive-properties((
+          (margin, (v: 0 ($spacer-x / -1), v-lg-up: 0 ($spacer-x-md / -1))),
+      ));
+
+      img {
+        @include img-fluid();
+        @include border-top-radius($border-radius-lg);
+      }
+    }
+
+    .subpage-inner {
+      display: flex;
+      flex-direction: row;
+      flex: 1 1 auto;
+
+      .subpage-inner-left {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+        width: 100%;
+
+        .subpage-title {
+          margin-bottom: 0;
+          font-size: $font-size-h4;
+          font-weight: $font-weight-regular;
+          text-align: left;
+          @include responsive-properties((
+              (margin-top, (v: $spacer-y, v-lg-up: $spacer-y-md)),
+          ));
+        }
+
+        .subpage-text {
+          margin: $spacer-y 0;
+          color: $blue;
+          text-align: left;
+          font-size: $font-size-sm-em;
+          @include remove-last-p-margin();
+        }
+
+        .btn {
+          margin-top: auto;
+          align-self: flex-start;
+        }
+      }
+
+      .subpage-inner-right {
+        display: flex;
+        align-items: flex-end;
+        padding-left: $spacer-x-sm;
+        @include responsive-properties((
+            (display, (v-xs-down: none, v-md: none)),
+        ));
+
+        .subpage-image {
+          flex: 1;
+          position: relative;
+          @include responsive-properties((
+              (max-width, (v-md: 90px !important)),
+          ));
+
+          img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @include responsive-properties((
+                (max-width, (v-md: 90px !important)),
+            ));
+          }
+        }
+      }
+    }
+  }
+}

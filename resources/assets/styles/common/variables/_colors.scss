@@ -1,0 +1,33 @@
+$white:                     #fff;
+$black:                     #000;
+$red:                       #fb1c41;
+$orange:                    #ff6a00;
+$yellow:                    #edc407;
+$green:                     #43ad49;
+$green-light:               #94d500;
+$blue:                      #077ab0;
+$blue-dark:                 #193864;
+$teal:                      #00aeff;
+$pink:                      #d32d89;
+$purple:                    #641d5f;
+
+$gray-darkest:              #2f2f2f !default;
+$gray-darker:               #5a5b5b !default;
+$gray-dark:                 #8b8b8b;
+$gray:                      #9b9c9d;
+$gray-light:                #bdbdbd;
+$gray-lighter:              #ebebeb;
+$gray-lightest:             #f8f8f8;
+
+$brand-primary:             $green;
+$brand-secondary:           $teal !default;
+$brand-success:             $green;
+$brand-info:                $blue;
+$brand-warning:             $orange;
+$brand-danger:              $red;
+$brand-inverse:             $gray-darker;
+
+$body-bg:                   $gray-darkest;
+$wrap-bg:                   $white !default;
+$body-color:                $gray-darker !default;
+$headings-color:            #3e3f40;

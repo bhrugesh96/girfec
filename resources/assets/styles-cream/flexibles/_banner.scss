@@ -1,0 +1,64 @@
+.layout-item.page-banner {
+  position: relative;
+  @include responsive-properties((
+      (height, (v: 260px, v-md-up: 300px, v-lg-up: 360px, v-xl-up: 400px)),
+  ));
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($brand-secondary, .78);
+    z-index: 9;
+  }
+
+  .banner-thumbnail {
+    margin: 0;
+
+    @include responsive-properties((
+        (height, (v: 260px, v-md-up: 300px, v-lg-up: 360px, v-xl-up: 400px)),
+    ));
+  }
+
+  .container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+    @include translateX(-50%);
+    @include responsive-properties((
+        (height, (v: 260px, v-md-up: 300px, v-lg-up: 360px, v-xl-up: 400px)),
+    ));
+
+    @include media-breakpoint-down(xs) {
+      width: 100%;
+    }
+
+    .banner-title {
+      margin: 0 0 $spacer-y-xs;
+      color: $brand-primary;
+      font-weight: $font-weight-medium;
+      text-align: center;
+      @include responsive-properties((
+          (font-size, (v: $font-size-h2, v-sm-up: $display4-size, v-lg-up: $display3-size, v-xl-up: $display2-size)),
+      ));
+    }
+
+    .banner-subtitle {
+      color: $brand-primary;
+      margin: 0;
+      text-align: center;
+      font-weight: $font-weight-base;
+      @include responsive-properties((
+          (font-size, (v: 1.05rem, v-sm-up: $font-size-h5, v-lg-up: 1.375rem, v-xl-up: $font-size-h4)),
+      ));
+    }
+  }
+}

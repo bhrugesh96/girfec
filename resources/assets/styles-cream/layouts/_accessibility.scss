@@ -1,0 +1,149 @@
+.template-accessibility {
+
+  .accessibility {
+
+    h2 {
+      color: $brand-primary;
+      font-size: $font-size-md;
+      margin-bottom: $spacer-y;
+    }
+
+    hr {
+      border-top-width: 6px;
+    }
+
+    form {
+
+      &.fonts {
+
+        label {
+          font-size: $font-size-sm-em;
+          margin-bottom: $spacer-y-xs;
+          font-weight: $font-weight-medium;
+          color: $cream;
+        }
+
+        .font-select-container {
+          @include responsive-properties((
+              (width, (v-sm-up: 280px)),
+          ));
+
+          select {
+            font-weight: $font-weight-medium;
+            border-color: $cream;
+
+            &:focus {
+              border-color: $brand-primary;
+            }
+          }
+        }
+      }
+
+      &.colours {
+        @include clearfix;
+
+        .radio {
+          margin-bottom: $spacer-y-sm;
+          @include responsive-properties((
+              (display, (v-sm-up: inline-block)),
+              (float, (v-sm-up: left)),
+          ));
+
+          + .radio {
+            @include responsive-properties((
+                (margin-left, (v-sm-up: $spacer-x-sm)),
+            ));
+          }
+
+          label {
+            display: flex;
+            align-items: center;
+            border-radius: $input-border-radius;
+            border: $input-btn-border-width solid $cream;
+            padding: 13px 15px;
+            position: relative;
+            font-size: $font-size-sm-em;
+            font-weight: $font-weight-medium;
+            cursor: pointer;
+            margin: 0;
+            @include responsive-properties((
+                (width, (v: 100%, v-sm-up: 160px)),
+                (float, (v-sm-up: left)),
+            ));
+
+            input {
+              margin-right: $spacer-x-xs;
+            }
+          }
+
+          &.contrast {
+
+            label {
+              background-color: #020202;
+              color: #e5dd04;
+            }
+          }
+
+          &.contrast-blue {
+
+            label {
+              background-color: #97cfff;
+              color: #1f455e;
+            }
+          }
+
+          &.cream{
+
+            label{
+              background-color: #f7f4d6;
+              color: #0b2c4e;
+            }
+          }
+        }
+      }
+    }
+
+    .access-buttons {
+      @include responsive-properties((
+          (display, (v: flex)),
+          (flex-direction, (v-xs: column-reverse)),
+      ));
+
+      .btn {
+        @include responsive-properties((
+            (width, (v-xs: 100%)),
+            (flex, (v-sm: 1)),
+        ));
+
+        + .btn {
+          @include responsive-properties((
+              (width, (v-xs: 100%)),
+              (margin-top, (v-xs: $spacer-y-sm)),
+              (margin-left, (v-sm-up: $spacer-x-sm)),
+          ));
+        }
+
+        &.btn-use {
+          @include responsive-properties((
+              (margin-top, (v-xs: 0)),
+          ));
+        }
+
+        &.btn-preview {
+          @include responsive-properties((
+              (margin-left, (v-lg-up: auto)),
+          ));
+        }
+
+        &.btn-reset {
+          @include button-variant($brand-primary, $cream, $cream);
+          @include responsive-properties((
+              (margin-left, (v-sm-up: 0)),
+              (margin-top, (v-xs: $spacer-y-sm)),
+          ));
+        }
+      }
+    }
+  }
+}
+

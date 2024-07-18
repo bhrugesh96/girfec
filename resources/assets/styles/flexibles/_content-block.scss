@@ -1,0 +1,25 @@
+.layout-item.content_block {
+  text-align: center;
+  @include responsive-properties((
+      (padding, (v: $spacer-y-lg 0, v-md-up: $spacer-y-lg 0, v-lg-up: $spacer-y-xl 0)),
+  ));
+
+  .cb-title {
+    max-width: 600px;
+    margin: 0 auto;
+    @include responsive-properties((
+        (font-size, (v: $font-size-h4, v-lg-up: $font-size-h3)),
+    ));
+  }
+
+  .cb-text {
+    max-width: 600px;
+    margin: $spacer-y auto 0;
+    color: $gray;
+    @include remove-last-p-margin();
+  }
+
+  .cb-buttons {
+    margin: $spacer-y-md 0 0;
+  }
+}

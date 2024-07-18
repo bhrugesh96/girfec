@@ -1,0 +1,26 @@
+// Grid system
+.content {
+  @include make-row();
+}
+.main {
+  @include make-col-ready();
+  @include media-breakpoint-up(md) {
+    @include make-col($main-md-columns);
+    .sidebar-primary & {
+      @include make-col($main-md-columns - $sidebar-md-columns);
+    }
+  }
+}
+.sidebar {
+  @include make-col-ready();
+  @include media-breakpoint-up(md) {
+    @include make-col($sidebar-md-columns);
+  }
+}
+
+.container {
+  @include media-breakpoint-down(sm) {
+    padding-left: $spacer-x;
+    padding-right: $spacer-x;
+  }
+}

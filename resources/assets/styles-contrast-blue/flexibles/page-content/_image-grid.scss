@@ -1,0 +1,62 @@
+.content-layout-item.image_grid {
+  margin-bottom: $spacer-y-sm;
+
+  .image-grid-item {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (-ms-high-contrast: active) and (max-width: 30em), (-ms-high-contrast: none) and (max-width: 30em) {
+      display: block !important;
+    }
+
+    .image-grid-image {
+      display: block;
+      outline: none;
+
+      img {
+        min-width: 100%;
+        @include img-fluid();
+      }
+    }
+
+    figcaption {
+      padding: $spacer-y-xs $spacer-x-sm;
+      position: relative;
+      color: $gray;
+      font-size: $font-size-sm;
+      font-style: italic;
+      background-color: $gray-lightest;
+      z-index: 10;
+      @include remove-last-p-margin();
+    }
+  }
+
+  &.image-grid-one {
+    @include make-row();
+
+    .image-grid-item {
+      @include make-grid-one();
+      cusror: default;
+    }
+  }
+
+  &.image-grid-two {
+    @include make-row();
+
+    .image-grid-item {
+      @include make-grid-two();
+      cusror: default;
+    }
+  }
+
+  &.image-grid-three {
+    @include make-row();
+
+    .image-grid-item {
+      @include make-grid-three();
+      cusror: default;
+    }
+  }
+}
